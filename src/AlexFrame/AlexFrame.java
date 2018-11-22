@@ -11,7 +11,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import AlexFrame.MoveFrame.MouseEventListener;
 
 public class AlexFrame{
 	private JFrame frame;
@@ -23,11 +22,10 @@ public class AlexFrame{
 	{
 		this.frame = new JFrame();
 		this.alex = new JLabel();
+		this.cgJLabelImg("normal.png");
+		this.tosetLocation(this.togetX(), this.togetY());
+		frame.getContentPane().add(alex);
 		this.initFrame();
-		frame.add(alex);
-//		this.cgJLabelImg("normal.png");
-//		this.tosetLocation(this.togetX(), this.togetY());
-//		frame.getContentPane().add(alex);
 	}
 	
 	private void initFrame()

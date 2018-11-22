@@ -23,7 +23,7 @@ public class loadFrame {
         this.alexframe = new AlexFrame();
         this.createAndShowGUI();
         
-//        this.moveFrame = new MoveFrame(alexframe);
+        this.moveFrame = new MoveFrame(alexframe);
 	}
 	
 	private void createAndShowGUI() {
