@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -37,14 +38,21 @@ public class MouseEventListener implements MouseInputListener {
  
     private void waitToChange()
     {
-    	Date d = new Date();
+		try
+		{
+		    Thread.sleep(1000);
+		}
+		catch (InterruptedException e)
+		{
+		    e.printStackTrace();
+		}
+	    alexframe.changeStatus("normal.png");
     }
     
     @Override
     public void mouseReleased(MouseEvent e) {
       //变更回去
       this.waitToChange();
-      alexframe.changeStatus("normal.png");
     }
  
     /**
