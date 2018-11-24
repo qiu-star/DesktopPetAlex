@@ -15,15 +15,20 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import AlexMovement.AlexMovement;
+
 public class loadFrame {
 	private AlexFrame alexframe; 
 	private MoveFrame moveFrame;
+	private AlexMovement alexMovement;
+	
 	public loadFrame()
 	{
         this.alexframe = new AlexFrame();
         this.createAndShowGUI();
         
-        this.moveFrame = new MoveFrame(alexframe);
+        this.alexMovement = new AlexMovement(alexframe);
+        this.moveFrame = new MoveFrame(alexframe,alexMovement);
 	}
 	
 	private void createAndShowGUI() {

@@ -11,14 +11,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.event.MouseInputListener;
 
+import AlexMovement.AlexMovement;
+
 public class MouseEventListener implements MouseInputListener {
     
     Point origin;
     //鼠标拖拽想要移动的目标组件
     AlexFrame alexframe;
+    AlexMovement alexmovement;
     
-    public MouseEventListener(AlexFrame frame) {
+    public MouseEventListener(AlexFrame frame, AlexMovement alexmovement) {
       this.alexframe = frame;
+      this.alexmovement = alexmovement;
       origin = new Point();
     }
      
@@ -33,6 +37,7 @@ public class MouseEventListener implements MouseInputListener {
       origin.x = e.getX(); 
       origin.y = e.getY();
       //变更图标
+      this.alexmovement.toSetIfPauseWagTail(true);
       alexframe.changeStatus("click.png");
     }
  
@@ -46,7 +51,8 @@ public class MouseEventListener implements MouseInputListener {
 		{
 		    e.printStackTrace();
 		}
-	    alexframe.changeStatus("normal.png");
+	    alexframe.changeStatus("normal0.png");
+	    this.alexmovement.toSetIfPauseWagTail(false);
     }
     
     @Override

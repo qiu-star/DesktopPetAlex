@@ -22,7 +22,7 @@ public class AlexFrame{
 	{
 		this.frame = new JFrame();
 		this.alex = new JLabel();
-		this.cgJLabelImg("normal.png");
+		this.cgJLabelImg("normal0.png");
 		this.tosetLocation(this.togetX(), this.togetY());
 		frame.getContentPane().add(alex);
 		this.initFrame();

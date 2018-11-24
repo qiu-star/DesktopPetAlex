@@ -14,20 +14,23 @@ import javax.swing.JWindow;
 import javax.swing.event.MouseInputAdapter;
 import javax.swing.event.MouseInputListener;
 
+import AlexMovement.AlexMovement;
+
 
 public class MoveFrame extends JWindow{
 	AlexFrame alexframe;
-	
-	public MoveFrame(AlexFrame jframe)
+	AlexMovement alexmovement;
+	public MoveFrame(AlexFrame jframe, AlexMovement alexmovement)
 	{
 		this.alexframe = jframe;
+		this.alexmovement = alexmovement;
 		// Û±ÍÕœ∂Ø
 		addMouse();
 	}
 	
 	private void addMouse()
 	{
-		MouseEventListener mouselisten = new MouseEventListener(alexframe);
+		MouseEventListener mouselisten = new MouseEventListener(alexframe,alexmovement);
 		this.alexframe.addMouseListener(mouselisten);;
 	}
 	
