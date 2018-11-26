@@ -11,20 +11,27 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import AlexMovement.Eyes;
+
 
 public class AlexFrame{
 	private JFrame frame;
 	private JLabel alex;
+	private Eyes eyes;
 	private int iconWidth;
 	private int iconHeight;
 	
 	public AlexFrame()
 	{
 		this.frame = new JFrame();
+		this.frame.setLayout(null);
+		this.eyes = new Eyes();
 		this.alex = new JLabel();
 		this.cgJLabelImg("normal0.png");
 		this.tosetLocation(this.togetX(), this.togetY());
 		frame.getContentPane().add(alex);
+		frame.getContentPane().add(eyes.getLeftEye());
+		frame.getContentPane().add(eyes.getRightEye());
 		this.initFrame();
 	}
 	
@@ -37,7 +44,8 @@ public class AlexFrame{
         
         
         // ÏÔÊ¾´°¿Ú
-        this.frame.pack();
+//        this.frame.pack();
+		this.frame.setSize(this.iconWidth, this.iconHeight);
         this.frame.setVisible(true);
 	}
 	
