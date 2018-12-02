@@ -10,6 +10,7 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.event.MouseInputListener;
 
 import AlexMovement.Eyes;
 
@@ -83,11 +84,11 @@ public class AlexFrame{
 		alex.setIcon(icon);
 	}
 	
-	public void addMouseListener(MouseEventListener mouselisten)
-	{
-		this.frame.addMouseListener(mouselisten);
-		this.frame.addMouseMotionListener(mouselisten);
-	}
+//	public void addMouseListener(MouseEventListener mouselisten)
+//	{
+//		this.frame.addMouseListener(mouselisten);
+//		this.frame.addMouseMotionListener(mouselisten);
+//	}
 	
 	public void setCursor(Cursor cursor)
 	{
@@ -102,5 +103,16 @@ public class AlexFrame{
 	public void setLocation(int x, int y)
 	{
 		this.frame.setLocation(x, y); 
+	}
+
+	public void addMouseListener(MouseInputListener mouseEyesListener) {
+		// TODO Auto-generated method stub
+		this.frame.addMouseListener(mouseEyesListener);
+		this.frame.addMouseMotionListener(mouseEyesListener);
+	}
+	
+	public Eyes getEyes()
+	{
+		return this.eyes;
 	}
 }

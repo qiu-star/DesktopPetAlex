@@ -38,17 +38,39 @@ public class Eyes {
 		return this.righteye;
 	}
 	
+	public int getRightEyeX()
+	{
+		return this.rx;
+	}
+	
+	public int getRightEyeY()
+	{
+		return this.ry;
+	}
+	
+	public int getLeftEyeX()
+	{
+		return this.lx;
+	}
+	
+	public int getLeftEyeY()
+	{
+		return this.ly;
+	}
+	
 	public void setLeftEyeLocation(int x, int y)
 	{
-		this.lx = x;
-		this.ly = y;
+//		this.lx = x;
+//		this.ly = y;
 		this.lefteye.setLocation(x, y);
+
+//		System.out.println("lx: "+this.lefteye.getX()+" ly: "+this.lefteye.getY());
 	}
 	
 	public void setRightEyeLocation(int x, int y)
 	{
-		this.rx = x;
-		this.ry = y;
+//		this.rx = x;
+//		this.ry = y;
 		this.righteye.setLocation(x, y);
 	}
 }
