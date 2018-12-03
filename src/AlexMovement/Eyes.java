@@ -64,7 +64,7 @@ public class Eyes {
 //		this.ly = y;
 		this.lefteye.setLocation(x, y);
 
-//		System.out.println("lx: "+this.lefteye.getX()+" ly: "+this.lefteye.getY());
+		System.out.println("lx: "+this.lefteye.getX()+" ly: "+this.lefteye.getY());
 	}
 	
 	public void setRightEyeLocation(int x, int y)
