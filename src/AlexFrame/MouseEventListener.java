@@ -51,7 +51,7 @@ public class MouseEventListener implements MouseInputListener {
 		{
 		    e.printStackTrace();
 		}
-	    alexframe.changeStatus("normal0.png");
+	    alexframe.changeStatus("normal1.png");
 //	    this.alexmovement.toSetIfPauseWagTail(false);
     }
     

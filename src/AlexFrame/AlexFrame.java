@@ -28,7 +28,7 @@ public class AlexFrame{
 		this.frame.setLayout(null);
 		this.eyes = new Eyes();
 		this.alex = new JLabel();
-		this.cgJLabelImg("normal0.png");
+		this.cgJLabelImg("normal1.png");
 		this.tosetLocation(this.togetX(), this.togetY());
 		frame.getContentPane().add(alex);
 		frame.getContentPane().add(eyes.getLeftEye());
