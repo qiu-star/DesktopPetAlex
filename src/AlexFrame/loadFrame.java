@@ -53,7 +53,7 @@ public class loadFrame {
 			popMenu.add(itemExit);
  
 			// …Ë÷√Õ–≈ÃÕº±Í
-			ImageIcon icon = new ImageIcon("trayIcon.png");
+			ImageIcon icon = new ImageIcon("pic/Icon/trayIcon.png");
 			Image image = icon.getImage().getScaledInstance(icon.getIconWidth(),icon.getIconHeight(), Image.SCALE_DEFAULT);
 			
 			TrayIcon trayIcon = new TrayIcon(image,"Alex",popMenu);

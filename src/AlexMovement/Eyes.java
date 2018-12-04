@@ -20,7 +20,7 @@ public class Eyes {
 	}
 	
 	private void cgJLabelImg(JLabel eye,int x,int y,String imgUrl){
-		ImageIcon icon = new ImageIcon(imgUrl);
+		ImageIcon icon = new ImageIcon("pic/Eyes/"+imgUrl);
 		int picWidth = icon.getIconWidth(),pinHeight = icon.getIconHeight();
 		
 		icon.setImage(icon.getImage().getScaledInstance(picWidth,pinHeight, Image.SCALE_DEFAULT));

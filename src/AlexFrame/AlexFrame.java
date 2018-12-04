@@ -75,7 +75,7 @@ public class AlexFrame{
 	}
 	
 	private void cgJLabelImg(String imgUrl){
-		ImageIcon icon = new ImageIcon(imgUrl);
+		ImageIcon icon = new ImageIcon("pic/Status/"+imgUrl);
 		int picWidth = icon.getIconWidth(),pinHeight = icon.getIconHeight();
 		this.iconWidth = picWidth;
 		this.iconHeight = pinHeight;

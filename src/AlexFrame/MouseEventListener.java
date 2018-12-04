@@ -66,7 +66,7 @@ public class MouseEventListener implements MouseInputListener {
     */
     @Override
     public void mouseEntered(MouseEvent e) {
-      Image image = new ImageIcon("cursor.png").getImage(); 
+      Image image = new ImageIcon("pic/Icon/cursor.png").getImage(); 
       Toolkit tk = Toolkit.getDefaultToolkit(); 
       Cursor cursor = tk.createCustomCursor(image, new Point(10, 10), "norm");
       this.alexframe.setCursor(cursor);
