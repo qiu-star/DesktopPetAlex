@@ -37,7 +37,7 @@ public class MouseEventListener implements MouseInputListener {
       origin.x = e.getX(); 
       origin.y = e.getY();
       //±ä¸üÍ¼±ê
-      this.alexmovement.toSetIfPauseWagTail(true);
+//      this.alexmovement.toSetIfPauseWagTail(true);
       alexframe.changeStatus("click.png");
     }
  
@@ -51,8 +51,8 @@ public class MouseEventListener implements MouseInputListener {
 		{
 		    e.printStackTrace();
 		}
-	    alexframe.changeStatus("normal0.png");
-	    this.alexmovement.toSetIfPauseWagTail(false);
+	    alexframe.changeStatus("normal1.png");
+//	    this.alexmovement.toSetIfPauseWagTail(false);
     }
     
     @Override

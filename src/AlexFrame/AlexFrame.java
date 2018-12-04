@@ -10,21 +10,29 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.event.MouseInputListener;
+
+import AlexMovement.Eyes;
 
 
 public class AlexFrame{
 	private JFrame frame;
 	private JLabel alex;
+	private Eyes eyes;
 	private int iconWidth;
 	private int iconHeight;
 	
 	public AlexFrame()
 	{
 		this.frame = new JFrame();
+		this.frame.setLayout(null);
+		this.eyes = new Eyes();
 		this.alex = new JLabel();
-		this.cgJLabelImg("normal0.png");
+		this.cgJLabelImg("normal1.png");
 		this.tosetLocation(this.togetX(), this.togetY());
 		frame.getContentPane().add(alex);
+		frame.getContentPane().add(eyes.getLeftEye());
+		frame.getContentPane().add(eyes.getRightEye());
 		this.initFrame();
 	}
 	
@@ -37,7 +45,8 @@ public class AlexFrame{
         
         
         // ÏÔÊ¾´°¿Ú
-        this.frame.pack();
+//        this.frame.pack();
+		this.frame.setSize(this.iconWidth, this.iconHeight);
         this.frame.setVisible(true);
 	}
 	
@@ -75,11 +84,11 @@ public class AlexFrame{
 		alex.setIcon(icon);
 	}
 	
-	public void addMouseListener(MouseEventListener mouselisten)
-	{
-		this.frame.addMouseListener(mouselisten);
-		this.frame.addMouseMotionListener(mouselisten);
-	}
+//	public void addMouseListener(MouseEventListener mouselisten)
+//	{
+//		this.frame.addMouseListener(mouselisten);
+//		this.frame.addMouseMotionListener(mouselisten);
+//	}
 	
 	public void setCursor(Cursor cursor)
 	{
@@ -94,5 +103,16 @@ public class AlexFrame{
 	public void setLocation(int x, int y)
 	{
 		this.frame.setLocation(x, y); 
+	}
+
+	public void addMouseListener(MouseInputListener mouseEyesListener) {
+		// TODO Auto-generated method stub
+		this.frame.addMouseListener(mouseEyesListener);
+		this.frame.addMouseMotionListener(mouseEyesListener);
+	}
+	
+	public Eyes getEyes()
+	{
+		return this.eyes;
 	}
 }

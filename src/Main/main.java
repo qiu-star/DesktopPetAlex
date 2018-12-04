@@ -5,6 +5,7 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import AlexFrame.loadFrame;
+import MouseHook.MouseLLHook;
 
 public class main {
 
@@ -16,5 +17,7 @@ public class main {
                 loadFrame frame = new loadFrame();
             }
         });
+		
+//		MouseLLHook.main(args);
 	}
 }
