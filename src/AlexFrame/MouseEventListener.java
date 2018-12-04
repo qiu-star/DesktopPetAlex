@@ -70,6 +70,7 @@ public class MouseEventListener implements MouseInputListener {
       Toolkit tk = Toolkit.getDefaultToolkit(); 
       Cursor cursor = tk.createCustomCursor(image, new Point(10, 10), "norm");
       this.alexframe.setCursor(cursor);
+      this.alexframe.togetMusic().setVisible(true);
     }
      
     /**
@@ -78,6 +79,7 @@ public class MouseEventListener implements MouseInputListener {
     @Override
     public void mouseExited(MouseEvent e) {
       this.alexframe.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+      this.alexframe.togetMusic().setVisible(false);
     }
  
     /**

@@ -40,7 +40,7 @@ public class MoveEyes {
 			lx = 20;
 		}
 		int rx = lx + 60;
-//		int ry = ly;	
+//		int ry = ly;
 		eyes.setLeftEyeLocation(lx, Y1);
 		eyes.setRightEyeLocation(rx, Y2);
 	}

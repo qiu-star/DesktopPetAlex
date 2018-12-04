@@ -18,6 +18,7 @@ import AlexMovement.Eyes;
 public class AlexFrame{
 	private JFrame frame;
 	private JLabel alex;
+	private JLabel music;
 	private Eyes eyes;
 	private int iconWidth;
 	private int iconHeight;
@@ -33,7 +34,31 @@ public class AlexFrame{
 		frame.getContentPane().add(alex);
 		frame.getContentPane().add(eyes.getLeftEye());
 		frame.getContentPane().add(eyes.getRightEye());
+		
+		this.music = this.toSetIcon();
+		frame.getContentPane().add(this.music);
 		this.initFrame();
+	}
+	
+	public JLabel togetMusic()
+	{
+		return this.music;
+	}
+	
+	private void cgJLabelImg(JLabel jLabel,String imgUrl){
+		ImageIcon icon = new ImageIcon("pic/Icon/"+imgUrl);
+		int picWidth = icon.getIconWidth(),pinHeight = icon.getIconHeight();
+		icon.setImage(icon.getImage().getScaledInstance(picWidth,pinHeight, Image.SCALE_DEFAULT));
+		jLabel.setBounds(230,145,picWidth,pinHeight);
+		jLabel.setIcon(icon);
+	}
+	
+	private JLabel toSetIcon()
+	{
+		JLabel jLabel = new JLabel();
+		this.cgJLabelImg(jLabel,"music.png");
+		jLabel.setVisible(false);
+		return jLabel;
 	}
 	
 	private void initFrame()
@@ -46,7 +71,7 @@ public class AlexFrame{
         
         // ÏÔÊ¾´°¿Ú
 //        this.frame.pack();
-		this.frame.setSize(this.iconWidth, this.iconHeight);
+		this.frame.setSize(this.iconWidth+50, this.iconHeight);
         this.frame.setVisible(true);
 	}
 	
@@ -105,10 +130,10 @@ public class AlexFrame{
 		this.frame.setLocation(x, y); 
 	}
 
-	public void addMouseListener(MouseInputListener mouseEyesListener) {
+	public void addMouseListener(MouseInputListener mouseListener) {
 		// TODO Auto-generated method stub
-		this.frame.addMouseListener(mouseEyesListener);
-		this.frame.addMouseMotionListener(mouseEyesListener);
+		this.frame.addMouseListener(mouseListener);
+		this.frame.addMouseMotionListener(mouseListener);
 	}
 	
 	public Eyes getEyes()
