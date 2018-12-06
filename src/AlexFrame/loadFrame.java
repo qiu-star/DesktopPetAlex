@@ -15,14 +15,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import AlexFunction.Menu;
 import AlexMovement.AlexMovement;
 
 public class loadFrame {
 	private AlexFrame alexframe; 
 	private MoveFrame moveFrame;
 	private AlexMovement alexMovement;
-	private Menu menu;
 	
 	public loadFrame()
 	{
@@ -31,7 +29,6 @@ public class loadFrame {
 
         this.alexMovement = new AlexMovement(alexframe);
         this.moveFrame = new MoveFrame(alexframe,alexMovement);
-        this.menu = new Menu(alexframe);
 	}
 	
 	private void createAndShowGUI() {

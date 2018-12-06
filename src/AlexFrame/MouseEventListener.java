@@ -16,6 +16,7 @@ import AlexMovement.AlexMovement;
 public class MouseEventListener implements MouseInputListener {
     
     Point origin;
+    boolean flag = false;
     //鼠标拖拽想要移动的目标组件
     AlexFrame alexframe;
     AlexMovement alexmovement;
@@ -31,6 +32,8 @@ public class MouseEventListener implements MouseInputListener {
     	if(e.getClickCount() == 1)
     	{
     		this.alexframe.toSetTalk(true);
+    		this.alexframe.toShowTalk();
+    		
     	}
     	else if(e.getClickCount() == 2)
     	{
@@ -48,6 +51,7 @@ public class MouseEventListener implements MouseInputListener {
       //变更图标
 //      this.alexmovement.toSetIfPauseWagTail(true);
       alexframe.changeStatus("click.png");
+      this.flag = true;
     }
  
     private void waitToChange(int time)
@@ -84,11 +88,15 @@ public class MouseEventListener implements MouseInputListener {
     */
     @Override
     public void mouseExited(MouseEvent e) {
-      //变更回去
-      this.waitToChange(3000);
-      this.alexframe.toSetTalk(false);
-      this.alexframe.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-//      this.alexframe.togetMusic().setVisible(false);
+      if(flag)
+      {
+    	  //变更回去
+	      this.waitToChange(3000);
+	      this.alexframe.toSetTalk(false);
+	      this.alexframe.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+	      //      this.alexframe.togetMusic().setVisible(false);
+	      this.flag = false;
+      }
     }
  
     /**
