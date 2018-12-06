@@ -15,23 +15,23 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+import AlexFunction.Menu;
 import AlexMovement.AlexMovement;
-import AlexMusic.AlexMusic;
 
 public class loadFrame {
 	private AlexFrame alexframe; 
 	private MoveFrame moveFrame;
 	private AlexMovement alexMovement;
-	private AlexMusic alexMusic;
+	private Menu menu;
 	
 	public loadFrame()
 	{
         this.alexframe = new AlexFrame();
         this.createAndShowGUI();
-  
+
         this.alexMovement = new AlexMovement(alexframe);
         this.moveFrame = new MoveFrame(alexframe,alexMovement);
-        this.alexMusic = new AlexMusic(alexframe);
+        this.menu = new Menu(alexframe);
 	}
 	
 	private void createAndShowGUI() {

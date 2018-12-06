@@ -17,7 +17,7 @@ import javax.swing.event.MouseInputListener;
 import AlexMovement.AlexMovement;
 
 
-public class MoveFrame extends JWindow{
+public class MoveFrame{
 	AlexFrame alexframe;
 	AlexMovement alexmovement;
 	public MoveFrame(AlexFrame jframe, AlexMovement alexmovement)
@@ -31,7 +31,7 @@ public class MoveFrame extends JWindow{
 	private void addMouse()
 	{
 		MouseEventListener mouselisten = new MouseEventListener(alexframe,alexmovement);
-		this.alexframe.addMouseListener(mouselisten);;
+		this.alexframe.AlexPanelAddMouseListener(mouselisten);
 	}
 	
 	

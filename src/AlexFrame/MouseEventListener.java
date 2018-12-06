@@ -27,7 +27,16 @@ public class MouseEventListener implements MouseInputListener {
     }
      
     @Override
-    public void mouseClicked(MouseEvent e) {}
+    public void mouseClicked(MouseEvent e) {
+    	if(e.getClickCount() == 1)
+    	{
+    		this.alexframe.toSetTalk(true);
+    	}
+    	else if(e.getClickCount() == 2)
+    	{
+//    	      this.alexframe.togetMusic().setVisible(true);
+    	}
+    }
   
     /**
     * 记录鼠标按下时的点
@@ -41,36 +50,33 @@ public class MouseEventListener implements MouseInputListener {
       alexframe.changeStatus("click.png");
     }
  
-    private void waitToChange()
+    private void waitToChange(int time)
     {
 		try
 		{
-		    Thread.sleep(1000);
+		    Thread.sleep(time);
 		}
 		catch (InterruptedException e)
 		{
 		    e.printStackTrace();
 		}
-	    alexframe.changeStatus("normal1.png");
+		alexframe.changeStatus("normal1.png");
+//	    System.out.print("Y");
 //	    this.alexmovement.toSetIfPauseWagTail(false);
     }
     
     @Override
-    public void mouseReleased(MouseEvent e) {
-      //变更回去
-      this.waitToChange();
-    }
+    public void mouseReleased(MouseEvent e) {}
  
     /**
     * 鼠标移进标题栏时，设置鼠标图标为移动图标
     */
     @Override
     public void mouseEntered(MouseEvent e) {
-      Image image = new ImageIcon("pic/Icon/cursor.png").getImage(); 
-      Toolkit tk = Toolkit.getDefaultToolkit(); 
-      Cursor cursor = tk.createCustomCursor(image, new Point(10, 10), "norm");
-      this.alexframe.setCursor(cursor);
-      this.alexframe.togetMusic().setVisible(true);
+		Image image = new ImageIcon("pic/Icon/cursor.png").getImage(); 
+		Toolkit tk = Toolkit.getDefaultToolkit(); 
+		Cursor cursor = tk.createCustomCursor(image, new Point(10, 10), "norm");
+		this.alexframe.setCursor(cursor);
     }
      
     /**
@@ -78,8 +84,11 @@ public class MouseEventListener implements MouseInputListener {
     */
     @Override
     public void mouseExited(MouseEvent e) {
+      //变更回去
+      this.waitToChange(3000);
+      this.alexframe.toSetTalk(false);
       this.alexframe.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-      this.alexframe.togetMusic().setVisible(false);
+//      this.alexframe.togetMusic().setVisible(false);
     }
  
     /**
