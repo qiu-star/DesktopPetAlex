@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Insets;
 import java.awt.List;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -17,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.event.MouseInputListener;
 
+import AlexFunction.Function;
 import AlexFunction.FunctionBubble;
 import AlexMovement.Eyes;
 import AlexTalk.AlexTalk;
@@ -29,12 +31,13 @@ public class AlexFrame{
 	private Eyes eyes;
 	
 	private JPanel FunctionPanel;
-	private JPanel BubblePanel;
-	private FunctionBubble functionBubble;
-	private JButton music;
+	private Function alexFunction;
+//	private JPanel BubblePanel;
+//	private FunctionBubble functionBubble;
+//	private JButton music;
 	private JButton onLive;
-	private JButton tieba;
-	private JButton weibo;
+//	private JButton tieba;
+//	private JButton weibo;
 	
 	private JPanel TalkPanel;
 	private JLabel dialog;
@@ -57,11 +60,11 @@ public class AlexFrame{
 		this.toMakeFunctionPanel();
 		this.toMakeTalkPanel();
 		
-		this.tosetLocation(this.togetX(), this.togetY()-80);
+		this.tosetLocation(this.togetX()-70, this.togetY()-80);
 
+		frame.getContentPane().add(this.FunctionPanel);
 		frame.getContentPane().add(TalkPanel);
 		frame.getContentPane().add(this.AlexPanel);
-		frame.getContentPane().add(this.FunctionPanel);
 		this.initFrame();
 	}
 	
@@ -87,7 +90,7 @@ public class AlexFrame{
 		this.talk.setLocation(70, 25);
 		
 		this.TalkPanel.setSize(dialogWidth,dialogHeight);
-		this.TalkPanel.setLocation(0, 0);
+		this.TalkPanel.setLocation(60, 0);
 		this.TalkPanel.add(talk);
 		this.TalkPanel.add(dialog);
 		this.TalkPanel.setVisible(false);
@@ -107,40 +110,43 @@ public class AlexFrame{
 	}
 	
 	private void toMakeFunctionPanel()
-	{
+	{	
 		this.FunctionPanel = new JPanel();
 		this.FunctionPanel.setLayout(null);
 		this.FunctionPanel.setBackground(new Color(0,0,0,0));
-		
-		this.BubblePanel = new JPanel();
-		this.BubblePanel.setLayout(null);
-		this.BubblePanel.setBackground(new Color(0,0,0,0));
-		
+//		
+//		this.BubblePanel = new JPanel();
+//		this.BubblePanel.setLayout(null);
+//		this.BubblePanel.setBackground(new Color(0,0,0,0));
+//		
+//		
+//		
 		this.onLive = new JButton();
-		this.cgJLabelImg(onLive, "pic/Icon/’Ω∆Ï.png", 40, 15);
-		this.music = new JButton();
-		this.cgJLabelImg(music, "pic/Icon/“Ù¿÷.png", 100, 15);
-		this.tieba = new JButton();
-		this.cgJLabelImg(tieba, "pic/Icon/Ã˘∞….png", 160, 15);
-		this.weibo = new JButton();
-		this.cgJLabelImg(weibo, "pic/Icon/Œ¢≤©.png", 220, 15);
-		BubblePanel.add(onLive);
-		BubblePanel.add(music);
-		BubblePanel.add(tieba);
-		BubblePanel.add(weibo);
-		
-		this.functionBubble = new FunctionBubble();
-		
-		BubblePanel.add(this.functionBubble.getBubble3());
-		BubblePanel.setSize(500,248);
-		
-		FunctionPanel.add(this.functionBubble.getBubble1());
-		FunctionPanel.add(this.functionBubble.getBubble2());
-		FunctionPanel.add(BubblePanel);
-		
-		this.FunctionPanel.setSize(500,248);
-		
-		this.FunctionPanel.setVisible(false);
+		this.cgJLabelImg(onLive, "pic/Icon/∞¢∆Ï.png", 0, 0);
+		this.onLive.setToolTipText("∞¢∆Ï");
+		this.FunctionPanel.add(onLive);
+//		this.music = new JButton();
+//		this.cgJLabelImg(music, "pic/Icon/“Ù¿÷.png", 120, 15);
+//		this.music.setToolTipText("Õ¯“◊‘∆");
+//		
+//		BubblePanel.add(onLive);
+//		BubblePanel.add(music);
+//		
+		this.alexFunction = new Function(onLive);
+//		
+//		this.functionBubble = new FunctionBubble();
+//		
+//		BubblePanel.setSize(300,248);
+//		
+//		FunctionPanel.add(BubblePanel);
+//		FunctionPanel.add(this.functionBubble.getBubble3());
+//		FunctionPanel.add(this.functionBubble.getBubble1());
+//		FunctionPanel.add(this.functionBubble.getBubble2());
+//		
+//		
+		this.FunctionPanel.setBounds(0, 0, 200, 200);
+//		
+//		this.FunctionPanel.setVisible(false);
 	}
 	
 	private void toMakeAlexPanel()
@@ -155,7 +161,7 @@ public class AlexFrame{
 		
 		this.AlexPanel.setSize(this.iconWidth,this.iconHeight);
 		this.AlexPanel.add(alex);
-		this.AlexPanel.setLocation(0, 100);
+		this.AlexPanel.setLocation(60, 100);
 		this.AlexPanel.add(eyes.getLeftEye());
 		this.AlexPanel.add(eyes.getRightEye());
 	}
@@ -189,12 +195,22 @@ public class AlexFrame{
 		size.add(picWidth);
 		size.add(pinHeight);
 		icon.setImage(icon.getImage().getScaledInstance(picWidth,pinHeight, Image.SCALE_DEFAULT));
-		jButton.setBounds(x,y,picWidth,pinHeight);
+//		jButton.setBounds(x,y,picWidth,pinHeight);
+		jButton.setSize(picWidth, pinHeight);
+		jButton.setLocation(x, y);
 		jButton.setIcon(icon);
+//		ImageIcon icon = new ImageIcon(imgUrl);
+//		jButton.setRolloverIcon(rolloverIcon);
+		jButton.setMargin(new Insets(0,0,0,0));
 		jButton.setContentAreaFilled(false);
 		jButton.setBorderPainted(false);
 		return size;
 	}
+	
+//	public void toShowFuntion(boolean flag)
+//	{
+//		this.FunctionPanel.setVisible(flag);
+//	}
 	
 	private void initFrame()
 	{
@@ -206,7 +222,7 @@ public class AlexFrame{
         
         // œ‘ æ¥∞ø⁄
 //        this.frame.pack();
-		this.frame.setSize(this.iconWidth+50, this.iconHeight+100);
+		this.frame.setSize(this.iconWidth+1300, this.iconHeight+100);
         this.frame.setVisible(true);
 	}
 	
