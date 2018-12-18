@@ -91,14 +91,14 @@ public class MouseEventListener implements MouseInputListener {
  
     private void waitToChange(int time)
     {
-//		try
-//		{
-//		    Thread.sleep(time);
-//		}
-//		catch (InterruptedException e)
-//		{
-//		    e.printStackTrace();
-//		}
+		try
+		{
+		    Thread.sleep(time);
+		}
+		catch (InterruptedException e)
+		{
+		    e.printStackTrace();
+		}
 		alexframe.changeStatus("normal1.png");
 //	    System.out.print("Y");
 //	    this.alexmovement.toSetIfPauseWagTail(false);

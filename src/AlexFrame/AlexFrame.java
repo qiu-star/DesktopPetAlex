@@ -122,7 +122,7 @@ public class AlexFrame{
 //		
 //		
 		this.onLive = new JButton();
-		this.cgJLabelImg(onLive, "pic/Icon/각펴.png", 0, 0);
+		this.cgJLabelImg(onLive, "pic/Icon/각펴.png", 0, 0,"pic/Icon/각펴_.png");
 		this.onLive.setToolTipText("각펴");
 		this.FunctionPanel.add(onLive);
 //		this.music = new JButton();
@@ -188,7 +188,7 @@ public class AlexFrame{
 		return size;
 	}
 	
-	private ArrayList<Integer> cgJLabelImg(JButton jButton,String imgUrl,int x,int y){
+	private ArrayList<Integer> cgJLabelImg(JButton jButton,String imgUrl,int x,int y,String imgUrl2){
 		ArrayList<Integer> size = new ArrayList<Integer>();
 		ImageIcon icon = new ImageIcon(imgUrl);
 		int picWidth = icon.getIconWidth(),pinHeight = icon.getIconHeight();
@@ -200,7 +200,7 @@ public class AlexFrame{
 		jButton.setLocation(x, y);
 		jButton.setIcon(icon);
 //		ImageIcon icon = new ImageIcon(imgUrl);
-//		jButton.setRolloverIcon(rolloverIcon);
+		jButton.setRolloverIcon(new ImageIcon(imgUrl2));
 		jButton.setMargin(new Insets(0,0,0,0));
 		jButton.setContentAreaFilled(false);
 		jButton.setBorderPainted(false);
