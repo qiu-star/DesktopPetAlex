@@ -9,7 +9,7 @@
 * <del>Alex的尾巴可以摇晃</del>(后因不够美观，删除)
 * 可以通过拖拽，把Alex放置在任何一个你喜欢的地方
 # 程序截图
-![正常形态下的Alex](https://wx4.sinaimg.cn/mw690/005uWzWaly1gacswf9hh8j30d40algr1.jpg)
+![正常形态下的Alex](https://wx4.sinaimg.cn/mw690/005uWzWaly1gact3k0x8jj30bw09wdhr.jpg)
 <br>![点击Alex](https://wx1.sinaimg.cn/mw690/005uWzWaly1gacsw4bstdj30bw09wq7a.jpg)</br>
 # 说明
 * 图片素材源于@刺穿
