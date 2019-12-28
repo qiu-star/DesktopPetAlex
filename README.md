@@ -10,7 +10,7 @@
 * 可以通过拖拽，把Alex放置在任何一个你喜欢的地方
 # 程序截图
 ![正常形态下的Alex](https://wx4.sinaimg.cn/mw690/005uWzWaly1gacswf9hh8j30d40algr1.jpg)
-![点击Alex](https://wx1.sinaimg.cn/mw690/005uWzWaly1gacsw4bstdj30bw09wq7a.jpg)
+<br>![点击Alex](https://wx1.sinaimg.cn/mw690/005uWzWaly1gacsw4bstdj30bw09wq7a.jpg)</br>
 # 说明
 * 图片素材源于@刺穿
 * Alex语录素材源于<del>@战旗TV、Alex超话@战旗alex贴吧</del>@灰烬Alex超话@灰烬Alex贴吧
