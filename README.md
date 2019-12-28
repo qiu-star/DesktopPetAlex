@@ -14,4 +14,4 @@
 # 说明
 * 图片素材源于@刺穿
 * Alex语录素材源于<del>@战旗TV、Alex超话@战旗alex贴吧</del>@灰烬Alex超话@灰烬Alex贴吧
-![关于](https://wx1.sinaimg.cn/mw690/005uWzWaly1gacswj1hicj30d00cmtbu.jpg)
+<br>![关于](https://wx1.sinaimg.cn/mw690/005uWzWaly1gacswj1hicj30d00cmtbu.jpg)</br>
