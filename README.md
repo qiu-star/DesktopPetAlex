@@ -1,6 +1,6 @@
 # 桌面宠物Alex - DesktopPetAlex
 概述：DesktopPetAlex为Alex的应援产物，可以直接于
-百度云https://pan.baidu.com/wap/init?surl=_nR6TZG8OyL2jyGFDiVIcQ 密码：93ch
+<br>百度云https://pan.baidu.com/wap/init?surl=_nR6TZG8OyL2jyGFDiVIcQ 密码：93ch</br>
 下载并双击exe文件运行（无需安装java）
 # 功能描述：
 * Alex的眼睛可以随鼠标移动
